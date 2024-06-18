@@ -2,8 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
-    cause: ./jvm.sh OOMDueToHeapSpace -Xmx25m
-    fix: ./jvm.sh OOMDueToHeapSpace -Xmx25m
+    ./jvm.sh OOMDueToHeapSpace -Xmx25m
  */
 public class OOMDueToHeapSpace {
 
