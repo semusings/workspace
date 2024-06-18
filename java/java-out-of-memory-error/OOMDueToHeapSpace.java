@@ -2,7 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
-    ./jvm.sh OOMDueToHeapSpace -verbose:gc -Xmx25m -XX:+UseParallelGC
+    cause: ./jvm.sh OOMDueToHeapSpace -Xmx25m
+    fix: ./jvm.sh OOMDueToHeapSpace -Xmx25m
  */
 public class OOMDueToHeapSpace {
 
@@ -16,6 +17,8 @@ public class OOMDueToHeapSpace {
             "software like Aldus PageMaker including versions of Lorem Ipsum.";
 
     public static void main(String[] args) throws Exception {
+        JVMUtils.showsMemoryInfo();
+
         Map<String, String> cache = new HashMap<>();
         for (long i = 0; i < Long.MAX_VALUE; i++) {
             String key = PARAGRAPH +  i;

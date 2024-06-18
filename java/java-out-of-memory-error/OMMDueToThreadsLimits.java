@@ -1,17 +1,19 @@
 import java.util.concurrent.TimeUnit;
 
 /*
-    ./jvm.sh OMMDueToThreadsLimits -verbose:gc -Xmx25m -XX:+UseParallelGC
+    ./jvm.sh OMMDueToThreadsLimits -Xmx25m
  */
 public class OMMDueToThreadsLimits {
 
     public static void main(String[] args) throws Exception {
+        JVMUtils.showsMemoryInfo();
+
         while (true) {
             new Thread(
                     () -> {
                         try {
                             Thread.sleep(TimeUnit.DAYS.toMillis(1));
-                        } catch (Exception ex) {
+                        } catch (Exception ignored) {
                         }
                     }
             ).start();

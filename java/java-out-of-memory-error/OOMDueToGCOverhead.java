@@ -1,15 +1,15 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 /*
-    ./jvm.sh OOMDueToGCOverhead -verbose:gc -Xmx25m -XX:+UseParallelGC
+    ./jvm.sh OOMDueToGCOverhead -Xmx25m
  */
 public class OOMDueToGCOverhead {
 
     public static void main(String[] args) throws Exception {
+        JVMUtils.showsMemoryInfo();
+
         Random random = new Random();
         List<String> cache = new LinkedList<>();
         while (true) {
